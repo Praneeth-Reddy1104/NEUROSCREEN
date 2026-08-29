@@ -1,24 +1,3 @@
-"""
-train.py
---------
-Reproduces the ASD screening pipeline from the notebook end-to-end:
-
-  1. Load data/train.csv
-  2. Clean (drop ID/age_desc, fix country names, fill missing categories)
-  3. Label-encode categorical columns (encoders saved for inference)
-  4. Replace outliers in age/result with the median
-  5. Train/test split + SMOTE oversampling on the training set
-  6. Cross-validate Decision Tree / Random Forest / XGBoost
-  7. Hyperparameter-tune all three with RandomizedSearchCV
-  8. Keep whichever has the best CV accuracy, evaluate on the held-out test set
-  9. Save artifacts/best_model.pkl, artifacts/encoders.pkl, artifacts/feature_columns.pkl
-
-Usage:
-    python train.py
-Requires:
-    data/train.csv  (the standard ASD screening dataset -
-                      https://www.kaggle.com/datasets/shivamshinde123/autismprediction)
-"""
 
 import pickle
 from pathlib import Path
